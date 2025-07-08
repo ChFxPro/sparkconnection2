@@ -1,5 +1,5 @@
 /* ===== Layout Overrides to Reset Theme Flex Rules ===== */
-body.page-id-18,
+body.helene-landing,
 #page,
 .site,
 .site-content {
@@ -137,10 +137,130 @@ body.page-id-18,
       font-size: 1.2rem;
       width: 220px;
     }
-    .stat strong {
-      font-size: 2rem;
-      color: #e03694;
-    }
+.stat strong {
+  font-size: 2rem;
+  color: #e03694;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+.segue-section {
+  background: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.segue-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9d509f;
+}
+.segue-section p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+.segue-section .scroll-down {
+  margin-top: 3rem;
+}
+
+.date-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 3rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.date-banner span {
+  flex: 1;
+}
+.date-banner .left {
+  text-align: right;
+}
+.date-banner .right {
+  text-align: left;
+}
+
+.quick-access {
+  background: #f3f3f3;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.quick-access h2,
+.quick-access p {
+  margin-bottom: 1rem;
+}
+.quick-access .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.voices-section {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.voices-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.voices-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.voices-list blockquote {
+  max-width: 300px;
+  font-style: italic;
+}
+.voices-list blockquote span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.submit-section {
+  background: #fafafa;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.submit-section p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+.submit-section form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.submit-section input,
+.submit-section textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+
+.partners-section .sponsor-credit {
+  margin-top: 3rem;
+  text-align: center;
+}
+.partners-section .sponsor-credit img {
+  max-height: 150px;
+}
+.partners-section .sponsor-credit p {
+  font-size: 0.95rem;
+  color: #666;
+}
     .partners-section {
       background: #fdfdfd;
       padding: 4rem 2rem;
@@ -222,10 +342,31 @@ body.page-id-18,
       transition: transform 0.3s ease, filter 0.3s ease;
       filter: grayscale(100%);
     }
-    .logo-box img:hover {
-      transform: scale(1.05);
-      filter: grayscale(0%);
-    }
+.logo-box img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+/* ================= Charts ================= */
+.data-charts {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.chart-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.chart-grid > div {
+  max-width: 320px;
+}
+.chart-grid canvas {
+  max-width: 100%;
+  height: auto !important;
+}
 
 @media screen and (min-width: 768px) {
   .collab-infographics,
