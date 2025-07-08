@@ -90,7 +90,6 @@ function helene_clean_setup() {
 	 *
 	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
-       add_theme_support( 'custom-logo' );
        add_theme_support(
                'custom-logo',
                array(
