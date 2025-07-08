@@ -125,7 +125,7 @@ get_header();
   </section>
   
   <div class="parallax-wrapper">
-    <div class="parallax-bg" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/imgs/HOYOH-logo.webp'); background-size: cover; background-position: center;"></div>
+    <div class="parallax-bg" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/imgs/heroimage.webp'); background-size: cover; background-position: center;"></div>
     <div class="hero-content">
       <div class="date-banner">
         <span class="left">SEPTEMBER</span>
