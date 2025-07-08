@@ -45,8 +45,11 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'helene-clean' ); ?></button>
+                <nav id="site-navigation" class="main-navigation">
+                        <button id="nav-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                                <span class="hamburger" aria-hidden="true"></span>
+                                <span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'helene-clean' ); ?></span>
+                        </button>
 			<?php
 			wp_nav_menu(
 				array(
