@@ -140,11 +140,19 @@ add_action( 'widgets_init', 'helene_clean_widgets_init' );
 function helene_clean_scripts() {
 	wp_enqueue_style( 'helene-clean-style', get_stylesheet_uri(), array(), _S_VERSION );
 	// Load helene-landing.css only on the Helene landing page template
-	if ( is_page_template( 'page-helene.php' ) ) {
-	    wp_enqueue_style( 'helene-landing-style', get_template_directory_uri() . '/helene-landing.css', array(), _S_VERSION );
-	    // Load Chart.js from CDN
-	    wp_enqueue_script( 'chartjs', 'https://cdn.jsdelivr.net/npm/chart.js', array(), null, true );
-	}
+        if ( is_page_template( 'page-helene.php' ) ) {
+            wp_enqueue_style( 'helene-landing-style', get_template_directory_uri() . '/helene-landing.css', array(), _S_VERSION );
+
+            // Load Chart.js from CDN with a local fallback
+            wp_enqueue_script( 'chartjs', 'https://cdn.jsdelivr.net/npm/chart.js', array(), null, true );
+            wp_add_inline_script(
+                'chartjs',
+                "window.Chart || document.write('<script src=\"" . esc_url( get_template_directory_uri() . '/js/chart.min.js' ) . "\"><\\/script>');"
+            );
+
+            // Custom interactions and chart setup
+            wp_enqueue_script( 'helene-charts', get_template_directory_uri() . '/js/helene-charts.js', array( 'chartjs' ), _S_VERSION, true );
+        }
 	wp_style_add_data( 'helene-clean-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'helene-clean-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
