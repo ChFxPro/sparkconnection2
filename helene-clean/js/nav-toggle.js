@@ -5,12 +5,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       toggle.classList.toggle('open');
+      nav.classList.toggle('toggled');
     });
 
     document.addEventListener('click', function (e) {
-      if (!nav.contains(e.target) && e.target !== toggle) {
+      const link = e.target.closest ? e.target.closest('#site-navigation a') : null;
+      if ((link || !nav.contains(e.target)) && e.target !== toggle) {
         toggle.classList.remove('open');
+        nav.classList.remove('toggled');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
