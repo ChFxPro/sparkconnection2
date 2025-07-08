@@ -47,11 +47,11 @@ function helene_clean_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__( 'Primary', 'helene-clean' ),
-		)
-	);
+       register_nav_menus(
+               array(
+                       'menu-1' => __( 'Primary Menu', 'helene-clean' ),
+               )
+       );
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
@@ -90,15 +90,16 @@ function helene_clean_setup() {
 	 *
 	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);
+       add_theme_support( 'custom-logo' );
+       add_theme_support(
+               'custom-logo',
+               array(
+                       'height'      => 250,
+                       'width'       => 250,
+                       'flex-width'  => true,
+                       'flex-height' => true,
+               )
+       );
 }
 add_action( 'after_setup_theme', 'helene_clean_setup' );
 
