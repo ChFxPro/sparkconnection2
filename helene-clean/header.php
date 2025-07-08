@@ -8,7 +8,6 @@
  *
  * @package Helene-Clean
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -28,16 +27,17 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
+			$logo_markup = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home"><img src="' . esc_url( get_template_directory_uri() . '/imgs/SparkPointLogoMain.png' ) . '" class="site-logo" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" /></a>';
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><?php echo $logo_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h1>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><?php echo $logo_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 				<?php
 			endif;
+
 			$helene_clean_description = get_bloginfo( 'description', 'display' );
 			if ( $helene_clean_description || is_customize_preview() ) :
 				?>
@@ -45,11 +45,12 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-                <nav id="site-navigation" class="main-navigation">
-                        <button id="nav-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                                <span class="hamburger" aria-hidden="true"></span>
-                                <span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'helene-clean' ); ?></span>
-                        </button>
+		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'helene-clean' ); ?>">
+			<button id="nav-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'helene-clean' ); ?>">
+				<span class="hamburger" aria-hidden="true"></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'helene-clean' ); ?></span>
+			</button>
+
 			<?php
 			wp_nav_menu(
 				array(

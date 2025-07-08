@@ -404,19 +404,29 @@ header.site-header {
   transition: box-shadow 0.3s ease;
 }
 
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.site-logo {
+  max-height: 50px;
+}
+main
 header.site-header.scrolled {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .site-title a {
-  color: #9d509f;
-  font-weight: 600;
-  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
 }
 
-.site-title a:hover {
-  color: #e03694;
+.site-title img {
+  max-height: 50px;
 }
 
 .site-description {
@@ -431,11 +441,29 @@ header.site-header.scrolled {
   text-transform: uppercase;
   font-size: 0.9rem;
   transition: color 0.3s ease;
+  position: relative;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#site-navigation .main-navigation ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #9d509f;
+  transition: width 0.3s ease;
 }
 
 #site-navigation .main-navigation ul li a:hover,
 #site-navigation .main-navigation ul li a:focus {
   color: #9d509f;
+}
+
+#site-navigation .main-navigation ul li a:hover::after,
+#site-navigation .main-navigation ul li a:focus::after {
+  width: 100%;
 }
 
 .menu-toggle {
