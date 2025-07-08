@@ -435,7 +435,7 @@ header.site-header.scrolled {
   margin-top: 0.25rem;
 }
 
-#site-navigation .main-navigation ul li a {
+#site-navigation ul li a {
   color: #333;
   padding: 0.75rem 1rem;
   text-transform: uppercase;
@@ -445,7 +445,7 @@ header.site-header.scrolled {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-#site-navigation .main-navigation ul li a::after {
+#site-navigation ul li a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -456,13 +456,13 @@ header.site-header.scrolled {
   transition: width 0.3s ease;
 }
 
-#site-navigation .main-navigation ul li a:hover,
-#site-navigation .main-navigation ul li a:focus {
+#site-navigation ul li a:hover,
+#site-navigation ul li a:focus {
   color: #9d509f;
 }
 
-#site-navigation .main-navigation ul li a:hover::after,
-#site-navigation .main-navigation ul li a:focus::after {
+#site-navigation ul li a:hover::after,
+#site-navigation ul li a:focus::after {
   width: 100%;
 }
 
