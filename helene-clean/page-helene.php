@@ -11,8 +11,8 @@ get_header();
 <div id="page" class="site">
   <div id="content" class="site-content">
 
-  <div class="parallax-wrapper" style="position: relative; width: 100%; overflow: hidden;">
-    <div class="parallax-bg" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/imgs/connectionbkgd.webp'); background-size: cover; background-position: center;"></div>
+  <div class="parallax-wrapper">
+    <div class="parallax-bg" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/imgs/heroimage.webp'); background-size: cover; background-position: center;"></div>
     <div class="hero-content">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/SparkConnection.webp" alt="Spark Connection Logo" class="helene-logo" />
     </div>
@@ -30,7 +30,7 @@ get_header();
 
   <section class="stats-section">
     <h2>The Case for Connection</h2>
-    <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
+    <p class="section-intro">
       In Transylvania County, 1 in 3 residents lives in a rural area with limited access to services. At the same time, 60% of nonprofits report operating in isolation—without consistent collaboration. We’re changing that.
     </p>
     <div class="stats-grid">
@@ -112,25 +112,25 @@ get_header();
   </section>
 
   <!-- Creative Segue Section -->
-  <section style="background: #fff; text-align: center; padding: 4rem 2rem;">
-    <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #9d509f;">From Data to Action</h2>
-    <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+  <section class="segue-section">
+    <h2>From Data to Action</h2>
+    <p>
       These numbers tell a powerful story—but they’re only the beginning. Scroll on to see how we’re turning insights into impact, one year after Helene.
     </p>
-    <div style="margin-top: 3rem;">
+    <div class="scroll-down">
       <svg width="48" height="48" viewBox="0 0 24 24" fill="#e03694" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 16.5l6-6-1.41-1.42L12 13.67 7.41 9.08 6 10.5l6 6z"/>
       </svg>
     </div>
   </section>
   
-  <div class="parallax-wrapper" style="position: relative; width: 100%; overflow: hidden;">
+  <div class="parallax-wrapper">
     <div class="parallax-bg" style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/imgs/HOYOH-logo.webp'); background-size: cover; background-position: center;"></div>
     <div class="hero-content">
-      <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 3rem; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); font-size: 3.5rem; font-weight: bold;">
-        <span style="flex: 1; text-align: right;">SEPTEMBER</span>
+      <div class="date-banner">
+        <span class="left">SEPTEMBER</span>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/HOYOH-logo.webp" alt="Helene: One Year of Healing Logo" class="helene-logo" />
-        <span style="flex: 1; text-align: left;">27TH, 2025</span>
+        <span class="right">27TH, 2025</span>
       </div>
     </div>
   </div>
@@ -147,10 +147,10 @@ get_header();
 
 
   <!-- Quick Access Bar -->
-  <section class="quick-access" style="background: #f3f3f3; padding: 2rem 1rem; text-align: center;">
-    <h2 style="margin-bottom: 1rem;">Need Help Now?</h2>
-    <p style="margin-bottom: 1rem;">Find resources for food, shelter, mental health and more.</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+  <section class="quick-access">
+    <h2>Need Help Now?</h2>
+    <p>Find resources for food, shelter, mental health and more.</p>
+    <div class="links">
       <a href="#" class="cta-button">Food Resources</a>
       <a href="#" class="cta-button">Shelter</a>
       <a href="#" class="cta-button">Mental Health</a>
@@ -159,23 +159,23 @@ get_header();
   </section>
 
   <!-- Community Voices Section -->
-  <section class="voices-section" style="background: #fff; padding: 4rem 2rem; text-align: center;">
+  <section class="voices-section">
     <h2>Community Voices</h2>
-    <p style="max-width: 600px; margin: 0 auto 2rem;">Hear from those who’ve made recovery possible—and those who’ve found healing through connection.</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-      <blockquote style="max-width: 300px; font-style: italic;">“It wasn’t just about fixing homes—it was about restoring hope.”<br><span style="display:block; margin-top: 0.5rem; font-weight: bold;">– Local Volunteer</span></blockquote>
-      <blockquote style="max-width: 300px; font-style: italic;">“I finally felt seen. Connected. Like I belonged again.”<br><span style="display:block; margin-top: 0.5rem; font-weight: bold;">– Community Member</span></blockquote>
+    <p>Hear from those who’ve made recovery possible—and those who’ve found healing through connection.</p>
+    <div class="voices-list">
+      <blockquote>“It wasn’t just about fixing homes—it was about restoring hope.”<br><span>– Local Volunteer</span></blockquote>
+      <blockquote>“I finally felt seen. Connected. Like I belonged again.”<br><span>– Community Member</span></blockquote>
     </div>
   </section>
 
   <!-- Submit a Resource Section -->
-  <section class="submit-section" style="background: #fafafa; padding: 4rem 2rem; text-align: center;">
+  <section class="submit-section">
     <h2>Suggest a Resource</h2>
-    <p style="max-width: 600px; margin: 0 auto 1.5rem;">Know an organization or support service that should be included? Help us grow the network.</p>
-    <form action="#" method="POST" style="max-width: 600px; margin: 0 auto;">
-      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc;">
-      <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: 1px solid #ccc;">
-      <textarea name="message" rows="5" placeholder="Describe the resource" required style="width: 100%; padding: 0.75rem; border: 1px solid #ccc;"></textarea>
+    <p>Know an organization or support service that should be included? Help us grow the network.</p>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Describe the resource" required></textarea>
       <br><br>
       <button type="submit" class="cta-button">Submit Resource</button>
     </form>
@@ -227,9 +227,9 @@ get_header();
         <p>Fiduciary agent supporting financial oversight and compliance for community-based initiatives.</p>
       </div>
     </div>
-    <div style="margin-top: 3rem; text-align: center;">
-      <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/ARC_Logo_Classic_Horiz_RGB.png" alt="American Red Cross Logo" style="max-height: 150px;" />
-      <p style="font-size: 0.95rem; color: #666;">This initiative was made possible in part by a Long-Term Recovery grant from the American Red Cross.</p>
+    <div class="sponsor-credit">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/ARC_Logo_Classic_Horiz_RGB.png" alt="American Red Cross Logo" />
+      <p>This initiative was made possible in part by a Long-Term Recovery grant from the American Red Cross.</p>
     </div>
   </section>
 
@@ -241,106 +241,6 @@ get_header();
 
   <button id="backToTop" title="Back to Top">↑</button>
 
-  <script>
-    window.addEventListener('scroll', function() {
-      const scroll = window.pageYOffset;
-      const parallax = document.querySelector('.parallax-bg');
-      if (parallax) {
-        parallax.style.transform = 'translateY(' + scroll * 0.3 + 'px)';
-      }
-    });
-
-    const counters = document.querySelectorAll('.count');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const update = () => {
-            const target = +el.getAttribute('data-target');
-            const current = +el.innerText;
-            const increment = Math.ceil(target / 40);
-            if (current < target) {
-              el.innerText = Math.min(current + increment, target);
-              setTimeout(update, 30);
-            }
-          };
-          update();
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    counters.forEach(counter => observer.observe(counter));
-
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const fadeObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    fadeEls.forEach(el => fadeObserver.observe(el));
-
-    const topBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) topBtn.classList.add('show');
-      else topBtn.classList.remove('show');
-    });
-    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-// Services by Sector
-if (typeof Chart !== 'undefined') {
-  const ctx1 = document.getElementById('sectorChart').getContext('2d');
-  new Chart(ctx1, {
-    type: 'doughnut',
-    data: {
-      labels: ['Food Distribution', 'Mental Health', 'Emergency Response', 'Housing', 'Other'],
-      datasets: [{
-        data: [40, 20, 25, 10, 5],
-        backgroundColor: ['#E91E63', '#9C27B0', '#03A9F4', '#FF9800', '#BDBDBD']
-      }]
-    },
-    options: {
-      responsive: true,
-      animation: {
-        animateRotate: true,
-        animateScale: true
-      },
-      plugins: {
-        legend: { position: 'bottom' }
-      }
-    }
-  });
-}
-
-// First Contact Sources
-if (typeof Chart !== 'undefined') {
-  const ctx2 = document.getElementById('accessChart').getContext('2d');
-  new Chart(ctx2, {
-    type: 'bar',
-    data: {
-      labels: ['School Counselors', 'Churches', 'Local Nonprofits', 'Social Media', 'Don’t Know'],
-      datasets: [{
-        label: 'Percent',
-        data: [35, 25, 20, 10, 10],
-        backgroundColor: ['#4CAF50', '#FFC107', '#2196F3', '#FF5722', '#9E9E9E']
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true,
-      animation: {
-        duration: 1200,
-        easing: 'easeOutQuart'
-      },
-      plugins: {
-        legend: { display: false }
-      }
-    }
-  });
-}
-  </script>
 
   </div>
 </div>
