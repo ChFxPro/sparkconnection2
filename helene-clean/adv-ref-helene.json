@@ -1,0 +1,89 @@
+{
+    "project": "SparkConnection.org – Helene Landing Page & Gratitude Wall",
+    "date_created": "2025-07-27",
+    "author": "Jeff Bannister",
+    "purpose": "Document the full local-to-live workflow for editing and deploying the custom Helene landing page and preparing for Gratitude Wall functionality. Capture all setup steps and debugging protocols for future ease.",
+    "environment": {
+      "local": {
+        "os": "Mac OS X",
+        "editor": "VS Code",
+        "github_repo": "/Users/jeffbannister/Desktop/Spark Point/WRC | Red Cross Program/Live SparkConnection Website/Theme Front page/sparkconnection2/helene-clean",
+        "mamp_web_root": "/Applications/MAMP/htdocs/sparkconnection-local/",
+        "wp_site_url": "http://localhost:8888/sparkconnection-local/"
+      },
+      "live": {
+        "deployment": "Auto-deployed from GitHub main branch on PR merge",
+        "production_url": "[YOUR LIVE URL HERE]",
+        "theme_path": "wp-content/themes/helene-clean"
+      }
+    },
+    "symlink_workflow": {
+      "why": "Allows seamless development in local GitHub repo while previewing instantly in local WordPress via MAMP.",
+      "how_to_set_up": [
+        "1. Remove any existing helene-clean theme folder from the MAMP site's /wp-content/themes/ directory.",
+        "2. Create a symlink from your GitHub repo theme folder to the WordPress themes folder:",
+        "   ln -s \"/Users/jeffbannister/Desktop/Spark Point/WRC | Red Cross Program/Live SparkConnection Website/Theme Front page/sparkconnection2/helene-clean\" \"/Applications/MAMP/htdocs/sparkconnection-local/wp-content/themes/helene-clean\"",
+        "3. Any edits in VS Code will be reflected immediately on the local site.",
+        "4. Commit and push as normal; live deploy triggers on PR merge."
+      ]
+    },
+    "how_this_page_works": {
+      "file": "page-helene.php",
+      "template_role": "Custom WordPress template for Helene: One Year of Healing event and WRC landing page.",
+      "major_sections": [
+        "Parallax hero with SparkConnection branding",
+        "Animated statistics (JS counters)",
+        "Collaboration & impact infographics",
+        "Chart.js data visualizations",
+        "Event details and call to action (sign up)",
+        "Quick access resource links",
+        "Community testimonials (Voices)",
+        "Partner & sponsor logos with required Red Cross credit",
+        "Footer with SparkPoint branding"
+      ],
+      "dependencies": [
+        "helene-landing.css (custom landing page styles)",
+        "helene-charts.js (chart logic & counter animations)",
+        "Chart.js (loaded from CDN or local fallback)",
+        "Imgs/ directory (brand/partner assets)"
+      ]
+    },
+    "branding_and_approval": {
+      "required_logos": [
+        "SparkPointLogoMain.png",
+        "ARC_Logo_Classic_Horiz_RGB.png",
+        "Other partner logos"
+      ],
+      "must_include_credit": "This initiative was made possible in part by a Long-Term Recovery grant from the American Red Cross.",
+      "approval_process": [
+        "All major new public-facing changes must be approved by Red Cross grant managers before live deployment.",
+        "Allow 3–5 days for approval unless urgent."
+      ]
+    },
+    "today_goal": {
+      "primary_objective": "Debug and finalize the Helene landing page so it is fully production-ready and visually/technically perfect.",
+      "secondary_objective": "Ensure the foundation is solid to move forward with building and integrating the Gratitude Wall feature.",
+      "success_criteria": [
+        "Local changes reflect instantly in MAMP preview.",
+        "All edits, once merged to main, deploy successfully to the live site.",
+        "Branding, credits, and accessibility are strictly followed.",
+        "No PHP/JS/CSS errors on front page.",
+        "All links and CTAs are functional.",
+        "Codebase is ready to support new features (Gratitude Wall)."
+      ],
+      "debug_protocol": [
+        "If a local change does not reflect, verify symlink and file path.",
+        "If live deployment fails, check GitHub Actions/CI logs and resolve build or deployment errors.",
+        "Test all functionality after each change locally before pushing.",
+        "Document any issues and fixes in this JSON or commit messages for future reference."
+      ]
+    },
+    "expectations_for_next_thread": {
+      "starting_point": "Use this JSON file to onboard, retrace setup, and prioritize any new debugging or feature development.",
+      "maintain": [
+        "Clear commit messages for every edit.",
+        "Regular backups or branch protection for main branch.",
+        "Update this JSON after any major workflow or system change."
+      ]
+    }
+  }
