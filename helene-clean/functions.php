@@ -141,7 +141,7 @@ function helene_clean_scripts() {
 	wp_enqueue_style( 'helene-clean-style', get_stylesheet_uri(), array(), _S_VERSION );
 	// Load helene-landing.css only on the Helene landing page template
         if ( is_page_template( 'page-helene.php' ) ) {
-            wp_enqueue_style( 'helene-landing-style', get_template_directory_uri() . '/helene-landing.css', array(), _S_VERSION );
+            wp_enqueue_style( 'helene-landing', get_template_directory_uri() . '/helene-landing.css', array(), _S_VERSION );
 
             // Load Chart.js from CDN with a local fallback
             wp_enqueue_script( 'chartjs', 'https://cdn.jsdelivr.net/npm/chart.js', array(), null, true );
