@@ -68,3 +68,10 @@ $ npm install
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+
+
+# Ignore backup files from refactoring scripts
+*.bak
+## Backup Files
+
+During automated refactors, backup copies of modified files are created with a `.bak` extension (e.g., `style.css.bak`). These backups allow easy review and rollback of changes. We add `*.bak` to `.gitignore` so they are not tracked by Git. After verifying the refactor, you can safely delete these files.
