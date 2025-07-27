@@ -146,16 +146,10 @@ get_header();
 
 
 
-  <!-- Quick Access Bar -->
-  <section class="quick-access">
-    <h2>Need Help Now?</h2>
-    <p>Find resources for food, shelter, mental health and more.</p>
-    <div class="links">
-      <a href="#" class="cta-button">Food Resources</a>
-      <a href="#" class="cta-button">Shelter</a>
-      <a href="#" class="cta-button">Mental Health</a>
-      <a href="#" class="cta-button">Financial Assistance</a>
-    </div>
+  <!-- Quick Access Bar (Coming Soon Placeholder) -->
+  <section class="quick-access-coming-soon">
+    <h2>Quick Access: Coming Soon</h2>
+    <p>Resources for food, shelter, mental health, and financial assistance will be available soon. Stay tuned!</p>
   </section>
 
   <!-- Community Voices Section -->
@@ -163,16 +157,39 @@ get_header();
     <h2>Community Voices</h2>
     <p>Hear from those who’ve made recovery possible—and those who’ve found healing through connection.</p>
     <div class="voices-list">
-      <blockquote>“It wasn’t just about fixing homes—it was about restoring hope.”<br><span>– Local Volunteer</span></blockquote>
-      <blockquote>“I finally felt seen. Connected. Like I belonged again.”<br><span>– Community Member</span></blockquote>
+      <blockquote>
+        “Your presence on campus today was wonderful and really made a lot of students and staff smile, so we all thank you so much for your time. You made a great impact on campus.”
+        <br><span>– Marion Hawsey | BRCC Student</span>
+      </blockquote>
+      <blockquote>
+        “The session exceeded our expectations!”
+        <br><span>– Alison C. | Gaia Herbs</span>
+      </blockquote>
+      <blockquote>
+        “We are a stronger team because we are better aligned, all moving in the same direction.”
+        <br><span>– GH | SparkPurpose Participant</span>
+      </blockquote>
+      <blockquote>
+        “This workshop was a reminder of how human we are… while we connect, laugh & give grace to each other.”
+        <br><span>– GH | SparkPurpose Participant</span>
+      </blockquote>
     </div>
   </section>
+
+  
+  <?php if ( isset( $_GET['submitted'] ) && 'true' === $_GET['submitted'] ) : ?>
+    <div class="submission-success">
+      <p>Thank you! Your resource suggestion has been submitted.</p>
+    </div>
+  <?php endif; ?>
 
   <!-- Submit a Resource Section -->
   <section class="submit-section">
     <h2>Suggest a Resource</h2>
     <p>Know an organization or support service that should be included? Help us grow the network.</p>
-    <form action="#" method="POST">
+    <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST">
+      <?php wp_nonce_field( 'helene_submit', 'helene_nonce' ); ?>
+      <input type="hidden" name="action" value="helene_submit">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Describe the resource" required></textarea>
@@ -184,48 +201,60 @@ get_header();
   <section class="partners-section">
     <h2>Our Core Partners</h2>
     <div class="partner-cards">
-      <div class="partner fade-in">
-        <div class="logo-box">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/SparkPointLogoMain.png" alt="SparkPoint" />
+      <a href="https://www.yoursparkpoint.org/" target="_blank" rel="noopener">
+        <div class="partner fade-in">
+          <div class="logo-box">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/SparkPointLogoMain.png" alt="SparkPoint" />
+          </div>
+          <p>Lead agency fostering emotional resilience and connection through inclusive events.</p>
         </div>
-        <p>Lead agency fostering emotional resilience and connection through inclusive events.</p>
-      </div>
+      </a>
       <div class="partner fade-in">
         <div class="logo-box">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/fwrd.webp" alt="Transylvania LTRG" />
         </div>
         <p>Supporting long-term recovery and community preparedness through coalition building.</p>
       </div>
-      <div class="partner fade-in">
-        <div class="logo-box">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/hungerco.webp" alt="Hunger Coalition of Transylvania County" />
+      <a href="https://www.hungerfreetc.com/" target="_blank" rel="noopener">
+        <div class="partner fade-in">
+          <div class="logo-box">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/hungerco.webp" alt="Hunger Coalition of Transylvania County" />
+          </div>
+          <p>Backbone for food access and rural community outreach, connecting health with nutrition.</p>
         </div>
-        <p>Backbone for food access and rural community outreach, connecting health with nutrition.</p>
-      </div>
-      <div class="partner fade-in">
-        <div class="logo-box">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/justecon.webp" alt="Just Economics of WNC" />
+      </a>
+      <a href="https://justeconomicswnc.org/" target="_blank" rel="noopener">
+        <div class="partner fade-in">
+          <div class="logo-box">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/justecon.webp" alt="Just Economics of WNC" />
+          </div>
+          <p>Advancing economic justice through financial literacy and empowerment programs.</p>
         </div>
-        <p>Advancing economic justice through financial literacy and empowerment programs.</p>
-      </div>
-      <div class="partner fade-in">
-        <div class="logo-box">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/tcstrong.webp" alt="TC STRONG" />
+      </a>
+      <a href="https://www.wearetcstrong.org/" target="_blank" rel="noopener">
+        <div class="partner fade-in">
+          <div class="logo-box">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/tcstrong.webp" alt="TC STRONG" />
+          </div>
+          <p>Championing youth mental health across schools and local organizations in the county.</p>
         </div>
-        <p>Championing youth mental health across schools and local organizations in the county.</p>
-      </div>
-      <div class="partner fade-in">
-        <div class="logo-box">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/UNC Health Pardee Logo Vert 4c.png" alt="UNC Health Pardee" />
+      </a>
+      <a href="https://www.pardeehospital.org/" target="_blank" rel="noopener">
+        <div class="partner fade-in">
+          <div class="logo-box">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/UNC Health Pardee Logo Vert 4c.png" alt="UNC Health Pardee" />
+          </div>
+          <p>Healthcare provider bringing regional strength and stewardship to recovery and wellness efforts.</p>
         </div>
-        <p>Healthcare provider bringing regional strength and stewardship to recovery and wellness efforts.</p>
-      </div>
-      <div class="partner fade-in">
-        <div class="logo-box">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/unchealthfound.webp" alt="UNC Health Pardee Foundation" />
+      </a>
+      <a href="https://pardeehospitalfoundation.org/" target="_blank" rel="noopener">
+        <div class="partner fade-in">
+          <div class="logo-box">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/unchealthfound.webp" alt="UNC Health Pardee Foundation" />
+          </div>
+          <p>Fiduciary agent supporting financial oversight and compliance for community-based initiatives.</p>
         </div>
-        <p>Fiduciary agent supporting financial oversight and compliance for community-based initiatives.</p>
-      </div>
+      </a>
     </div>
     <div class="sponsor-credit">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/imgs/ARC_Logo_Classic_Horiz_RGB.png" alt="American Red Cross Logo" />

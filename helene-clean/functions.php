@@ -197,4 +197,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+// Handle Helene landing page form submissions
+add_action( 'admin_post_helene_submit', 'helene_handle_submission' );
+add_action( 'admin_post_nopriv_helene_submit', 'helene_handle_submission' );
+function helene_handle_submission() {
+    // Verify nonce for security
+    if ( ! isset( $_POST['helene_nonce'] ) ||
+         ! wp_verify_nonce( sanitize_text_field( $_POST['helene_nonce'] ), 'helene_submit' ) ) {
+        wp_die( 'Security check failed', 'Submission Error', [ 'response' => 403 ] );
+    }
+
+    // Sanitize form fields
+    $name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
+    $email   = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+    $message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
+
+    // Send email
+    $to      = get_option( 'admin_email' );
+    $subject = __( 'New Submission from Helene Page', 'helene-clean' );
+    $body    = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+    wp_mail( $to, $subject, $body );
+
+    // Redirect back with success flag
+    $redirect_url = add_query_arg( 'submitted', 'true', wp_get_referer() );
+    wp_safe_redirect( $redirect_url );
+    exit;
+}
+
 ?>

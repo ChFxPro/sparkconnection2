@@ -1182,68 +1182,36 @@ header.site-header.scrolled {
   display: none;
 }
 
-/* Mobile: hide menu list until details is open */
-@media (max-width: 768px) {
-  .mobile-menu ul {
-    display: none;
-    flex-direction: column;
-    padding: 1rem 0;
-    margin: 0;
-  }
-  .mobile-menu[open] ul {
-    display: flex;
-    align-items: flex-end;
-    gap: 0.5rem;
-  }
+
+
+
+
+/* Persistent Toggle Menu Override */
+.mobile-menu ul {
+  display: none;
+}
+.mobile-menu[open] ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0.5rem 1rem;
+  background: var(--color-bg, #fff);
+  border-radius: 4px;
+  margin-right: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1005;
 }
 
-/* Desktop: hide the summary toggle, always show list inline */
-@media (min-width: 769px) {
-  .mobile-menu summary {
-    display: none;
-  }
-  .mobile-menu ul {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
+
+/* ===== Persistent Toggle Positioning ===== */
+header.site-header .main-navigation {
+  margin-left: auto;
+  position: relative;
 }
 
-/* Mobile: position menu on right and overlay below header */
-@media (max-width: 768px) {
-  /* Push nav toggle to the far right */
-  header.site-header .main-navigation {
-    margin-left: auto;
-  }
-
-  /* Establish positioning context for overlay */
-  .mobile-menu {
-    position: relative;
-  }
-
-  /* Overlay the opened menu instead of pushing header height */
-  .mobile-menu[open] ul {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem 1rem;
-    background: var(--color-bg, #fff);
-    border-radius: 4px;
-    margin-right: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1005;
-  }
-
-  /* Position the summary toggle at the right edge */
-  .mobile-menu summary {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-  }
+header.site-header .mobile-menu summary {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
 }
