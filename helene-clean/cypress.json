@@ -1,0 +1,11 @@
+{
+    "baseUrl": "http://localhost:8888/sparkconnection-local/spark-connection/",
+    "integrationFolder": "cypress/integration",
+    "fixturesFolder": "cypress/fixtures",
+    "pluginsFile": "cypress/plugins/index.js",
+    "supportFile": "cypress/support/index.js",
+    "video": false,
+    "viewportWidth": 375,
+    "viewportHeight": 667,
+    "chromeWebSecurity": false
+  }
