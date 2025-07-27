@@ -16,11 +16,11 @@
     </a>
 </div><!-- .site-branding -->
 
-	<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'helene-clean' ); ?>">
-		<button id="nav-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'helene-clean' ); ?>">
-			<span class="hamburger" aria-hidden="true"></span>
-			<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'helene-clean' ); ?></span>
-		</button>
+        <nav id="site-navigation" class="main-navigation" aria-label="Primary Menu">
+                <button id="nav-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="hamburger" aria-hidden="true"></span>
+                        <span class="screen-reader-text">Primary Menu</span>
+                </button>
 
 		<?php
 		wp_nav_menu(

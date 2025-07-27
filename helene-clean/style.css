@@ -857,39 +857,39 @@ header.site-header.scrolled {
 }
 
 @media (max-width: 768px) {
-  /* Show hamburger toggle */
-  .menu-toggle {
-    display: block;
-    position: relative;
-    z-index: 1003;
-  }
-
-  /* Ensure nav sits above the hero and has a background */
+  /* Ensure nav sits above hero image */
   #site-navigation {
     position: relative;
     z-index: 1002;
     background: var(--color-bg, #ffffff);
   }
 
-  /* Hide primary menu by default */
-  #primary-menu.menu {
+  /* Hide menu when not toggled */
+  #site-navigation:not(.toggled) #primary-menu.menu {
     display: none;
   }
 
-  /* Show stacked menu when toggled */
+  /* Show menu when toggled */
   #site-navigation.toggled #primary-menu.menu {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     padding: 1rem 0;
-    background: var(--color-bg, #ffffff);
+    background: var(--color-bg, #fff);
+    position: relative;
     z-index: 1003;
   }
 
-  /* Ensure the menu list items are visible and right-aligned */
+  /* Right-align stacked list */
   #site-navigation.toggled .main-navigation ul {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1004;
   }
 
   /* Menu link spacing */
